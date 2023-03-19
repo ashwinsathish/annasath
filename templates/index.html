@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accident Prediction</title>
+</head>
+<body>
+  <h1>Monthly accidents prediction</h1>
+  <br>Enter the Category code, Accident code, Year and Month to predict for accidents:
+  <br><br> Category codes:
+  <l>1 - Alkoholunfälle</l>
+  <l>2 - Fluchtunfälle</l>
+  <l>3 - Verkehrsunfälle</l>
+  <br>Accident Type codes:
+  <l>1 - insgesamt</l>
+  <l>2 - Verletzte und Getötete</l>
+  <l>3 - mit Personenschäden</l>
+  <br><br>
+  <form method="post" action="/predict">
+    <label>Category code</label>
+    <input type="text" name="category_code"><br><br>
+
+    <label>Accident Type code</label>
+    <input type="text" name="acc_type_code"><br><br>
+
+    <label>Year</label>
+    <input type="text" name="year"><br><br>
+
+    <label>Month</label>
+    <input type="text" name="month"><br><br>
+
+    <input type="submit" name="Predict"><br><br>
+  </form>
+  {% if result %}
+    <p>Predicted value = {{ result }}</p>
+  {% endif %}
+
+</body>
+</html>
