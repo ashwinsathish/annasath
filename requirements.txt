@@ -3,6 +3,5 @@ joblib
 numpy
 pandas
 scikit-learn
-tensorflow
 keras
 gunicorn
