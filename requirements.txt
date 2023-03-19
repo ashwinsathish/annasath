@@ -1,5 +1,4 @@
 Flask
-joblib
 numpy
 pandas
 scikit-learn
@@ -7,3 +6,4 @@ keras
 gunicorn
 uvicorn
 xgboost
+tensorflow-cpu
