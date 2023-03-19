@@ -58,7 +58,7 @@ def predict_accidents():
     #prediction
     input_data = np.array([[category_code, acc_type_code, year, month]])
     #scaled_data = scaler.transform(input_data)
-    result = model.predict(scaled_data)
+    result = model.predict(input_data)
     return render_template('index.html',result=result)
 
 if __name__ == '__main__':
