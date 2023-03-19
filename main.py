@@ -43,7 +43,7 @@ app = Flask(__name__, template_folder='./templates')
 #     result = model.predict(scaled_data)
 #     return render_template('index.html',result=result)
 
-# @app.route('/predict_acc', methods=['POST'])
+ @app.route('/predict_acc', methods=['POST'])
 
 def predict_acc():
     # Parse the JSON request body
