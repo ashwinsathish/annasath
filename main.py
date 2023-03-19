@@ -16,7 +16,7 @@ model = pickle.load(open('xgb_pred_model','rb'))
 # scaler = StandardScaler()
 # X_train = scaler.fit_transform(X_train)
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__, template_folder='./templates')
 
