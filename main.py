@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 #model = pickle.load(open('my_model.pkl','rb'))
 from keras.models import load_model
 
-model = load_model('pred_model.h5')
+model = load_model('model.h5')
 df2 = pd.read_csv("Mod_acc_data.csv")
 
 X = df2[['Category_Code', 'Accident_Type_Code', 'Year', 'Month']]
