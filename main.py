@@ -23,27 +23,27 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__, template_folder='./templates')
 
-@app.route('/')
+# @app.route('/')
 
-def index():
-    return render_template('index.html')
+# def index():
+#     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+# @app.route('/predict', methods=['POST'])
 
-def predict():
+# def predict():
 
-    category_code = int(request.form.get('category_code'))
-    acc_type_code = int(request.form.get('acc_type_code'))
-    year = int(request.form.get('year'))
-    month = int(request.form.get('month'))
+#     category_code = int(request.form.get('category_code'))
+#     acc_type_code = int(request.form.get('acc_type_code'))
+#     year = int(request.form.get('year'))
+#     month = int(request.form.get('month'))
 
-    #prediction
-    input_data = np.array([[category_code, acc_type_code, year, month]])
-    scaled_data = scaler.transform(input_data)
-    result = model.predict(scaled_data)
-    return render_template('index.html',result=result)
+#     #prediction
+#     input_data = np.array([[category_code, acc_type_code, year, month]])
+#     scaled_data = scaler.transform(input_data)
+#     result = model.predict(scaled_data)
+#     return render_template('index.html',result=result)
 
-@app.route('/predict_acc', methods=['POST'])
+# @app.route('/predict_acc', methods=['POST'])
 
 def predict_acc():
     # Parse the JSON request body
