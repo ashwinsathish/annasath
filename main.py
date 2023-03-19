@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 #scaler = pickle.load(open('scaler_model.pkl','rb'))
-model = pickle.load(open('xgb_pred_model.pkl','rb'))
+model = pickle.load(open('xgb_pred_model','rb'))
 # df2 = pd.read_csv("Mod_acc_data.csv")
 
 # X = df2[['Category_Code', 'Accident_Type_Code', 'Year', 'Month']]
