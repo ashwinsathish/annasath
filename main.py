@@ -23,29 +23,8 @@ from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__, template_folder='./templates')
 
-# @app.route('/predict', methods=['POST'])
-# def predict():
-#     # Parse the JSON request body
-#     data = request.get_json()
-
-#     # Extract the values for each feature
-#     category_code = data['category_code']
-#     acc_type_code = data['accident_type_code']
-#     year = data['year']
-#     month = data['month']
-
-#     # Transform the input data
-#     input_data = np.array([[category_code, acc_type_code, year, month]])
-#     scaled_data = scaler.transform(input_data)
-
-#     # Make a prediction
-#     prediction = model.predict(scaled_data)
-
-#     # Return the prediction as a JSON object
-#     response = {'predictions': prediction.tolist()}
-#     return jsonify(response)
-
 @app.route('/')
+
 def index():
     return render_template('index.html')
 
@@ -63,6 +42,29 @@ def predict():
     scaled_data = scaler.transform(input_data)
     result = model.predict(scaled_data)
     return render_template('index.html',result=result)
+
+@app.route('/predict_acc', methods=['POST'])
+
+def predict_acc():
+    # Parse the JSON request body
+    data = request.get_json()
+
+    # Extract the values for each feature
+    category_code = data['category_code']
+    acc_type_code = data['accident_type_code']
+    year = data['year']
+    month = data['month']
+
+    # Transform the input data
+    input_data = np.array([[category_code, acc_type_code, year, month]])
+    scaled_data = scaler.transform(input_data)
+
+    # Make a prediction
+    prediction = model.predict(scaled_data)
+
+    # Return the prediction as a JSON object
+    response = {'predictions': prediction.tolist()}
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080, debug=True)
